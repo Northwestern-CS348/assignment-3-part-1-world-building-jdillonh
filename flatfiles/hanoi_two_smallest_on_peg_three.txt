@@ -18,4 +18,23 @@ Example:
 fact: (pred obj1 obj2)
 rule: ((pred obj1 obj2) (pred obj2 obj3)) -> (pred obj1 obj3)
 
+#removed
+fact: (on disk3 disk4)
+fact: (on disk4 disk5)
 """
+#on's
+fact: (on disk3 peg1)
+fact: (on disk4 peg1)
+fact: (on disk5 peg1)
+fact: (on disk1 peg3)
+fact: (on disk2 peg3)
+
+#onTopOf's
+fact: (onTopOf disk3 disk4)
+fact: (onTopOf disk4 disk5)
+fact: (onTopOf disk1 disk2)
+
+#movables
+fact: (movable disk3 peg1 peg2)
+fact: (movable disk1 peg3 peg2)
+fact: (movable disk1 peg3 peg1)
