@@ -38,3 +38,18 @@ fact: (onTopOf disk1 disk2)
 fact: (movable disk3 peg1 peg2)
 fact: (movable disk1 peg3 peg2)
 fact: (movable disk1 peg3 peg1)
+
+#biggers
+fact: (bigger disk5 disk4)
+fact: (bigger disk4 disk3)
+fact: (bigger disk3 disk2)
+fact: (bigger disk2 disk1)
+
+#topMosts
+fact: (topMostDisk disk3 peg1)
+fact: (topMostDisk disk1 peg3)
+
+#rules
+rule: ((bigger ?aDisk ?bDisk) (bigger ?bDisk ?cDisk) -> (bigger aDisk cDisk))
+
+rule: ((topMostDisk ?thisDisk ?thisPeg) (topOf ?anotherPeg ?anotherDisk) (bigger ?anotherDisk ?thisDisk)) -> (movable thisDisk ?thisPeg ?anotherPeg) 
